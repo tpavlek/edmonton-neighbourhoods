@@ -7,8 +7,12 @@ Route::get('/{neighbourhood}/trees', 'Neighbourhoods@trees')->name('trees');
 Route::get('/{neighbourhood}/pets', 'Neighbourhoods@pets')->name('pets');
 Route::get('/{neighbourhood}/assessment', 'Neighbourhoods@assessment')->name('assessment');
 Route::get('/{neighbourhood}/genders', 'Neighbourhoods@genders')->name('genders');
+Route::get('/{neighbourhood}/criminal_incidents', 'Neighbourhoods@criminal_incidents')->name('criminal_incidents');
+Route::get('/{neighbourhood}/transport_mode', 'Neighbourhoods@transport_mode')->name('transport_mode');
+Route::get('/{neighbourhood}/populations', 'Neighbourhoods@populations')->name('populations');
+Route::get('/test', 'Neighbourhoods@test');
 
-Route::get('/{neighbourhood}', 'Neighbourhoods@show');
+Route::get('/{neighbourhood}', 'Neighbourhoods@show')->name('neighbourhood.show');
 
 /*
 |--------------------------------------------------------------------------

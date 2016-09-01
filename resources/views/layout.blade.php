@@ -12,8 +12,9 @@
 </div>
 
 <footer>
-    &copy; <a href="https://tpavlek.me">Troy Pavlek</a> {{ \Carbon\Carbon::now()->year }}. Data provided by
+    &copy; <a href="https://tpavlek.me">Troy Pavlek</a>. Data provided by
     <a href="https://data.edmonton.ca">Edmonton Open Data Catalogue</a>
+    | Submit a picture of your neighbourhood to <a href="mailto:troy@tpavlek.me">troy@tpavlek.me</a>
 </footer>
 
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>

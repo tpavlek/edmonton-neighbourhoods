@@ -42,10 +42,16 @@ class SyncNeighbourhoods
                 //continue;
             }
 
+            foreach ([ 2016 ] as $year) {
+                $population = $this->populationService->forNeighbourhoodYear($neighbourhood, $year);
+
+                $neighbourhood->{"population_$year"} = $population;
+            }
+            /*
             $population = $this->populationService->dataForNeighbourhood($neighbourhood);
 
-            $neighbourhood->population = $population->total();
-            $neighbourhood->ward = $population->ward;
+            $neighbourhood->population_2014 = $population->total();
+            $neighbourhood->ward = $population->ward;*/
             $neighbourhood->save();
         }
     }

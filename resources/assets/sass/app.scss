@@ -42,6 +42,9 @@ body { padding: 0; margin: 0;}
 .bg-hazeldean {
   background: url("/img/neighbourhood-banner/hazeldean.jpg");
 }
+.bg-edmonton {
+  background: url("/img/neighbourhood-banner/edmonton.jpg");
+}
 
 .banner {
   @extend .jumbotron;
@@ -68,6 +71,9 @@ body { padding: 0; margin: 0;}
     transition: all 0.2s ease;
   }
 }
+tr td:first-child {
+  white-space: nowrap;
+}
 
 .data-panel {
   text-align: center;
@@ -77,7 +83,7 @@ body { padding: 0; margin: 0;}
   font-size: 3em;
 }
 
-.tree-content {
+.tree-content, .pet-content, .criminal-content, .transport-content {
   font-size: 2em;
 }
 
@@ -87,6 +93,15 @@ body { padding: 0; margin: 0;}
 
 .assessment-content {
   font-size: 2em;
+}
+
+.transport {
+  @extend .strong;
+  color: #2F6605;
+}
+
+.transport.car {
+  color: #6B2710;
 }
 
 .strong {
@@ -122,6 +137,15 @@ body { padding: 0; margin: 0;}
   @extend .trees;
   @extend .strong;
   font-size: 125%;
+}
+
+.criminal-incident {
+  color: #8A1121;
+  font-weight: bold;
+}
+
+.criminal-incident.count {
+  font-size: 110%;
 }
 
 .body-wrapper.shrink .break {
@@ -161,4 +185,33 @@ footer {
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 10%;
+}
+
+.mainpage {
+  justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  background: lemonchiffon;
+}
+
+.mainpage .banner { width: 100%;}
+
+.whitecard {
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow: 0px 1px 1px black;
+  padding: 1rem;
+  margin: 0.5rem;
+
+
+}
+
+.whitecard p {
+  margin-left: 0;
+  margin-right: 0;
+  text-align:center;
+}
+
+.whitecard a {
+  font-weight: bold;
 }

@@ -53,9 +53,7 @@ class StructureTypeCollection
                     'name' => $structureType->type,
                     'id' => $structureType->type,
                     'data' => [
-                        [ 'Rented', ($structureType->num_rented / $structureType->total()) * 100 ],
-                        [ 'Owned', ($structureType->num_owned / $structureType->total()) * 100 ],
-                        [ 'No Response', ($structureType->num_no_response / $structureType->total()) * 100 ]
+                        $structureType->total()
                     ]
                 ];
             })

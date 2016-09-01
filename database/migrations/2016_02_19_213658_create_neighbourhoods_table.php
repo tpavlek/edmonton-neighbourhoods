@@ -17,7 +17,10 @@ class CreateNeighbourhoodsTable extends Migration
 
             $table->string('name');
             $table->string('slug');
-            $table->integer('population')->unsigned();
+            $table->integer('population_2009')->unsigned();
+            $table->integer('population_2012')->unsigned();
+            $table->integer('population_2014')->unsigned();
+            $table->integer('population_2016')->unsigned();
             $table->string('ward');
 
             $table->timestamps();

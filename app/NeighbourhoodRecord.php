@@ -19,6 +19,16 @@ class NeighbourhoodRecord extends Model
         $this->attributes['name'] = $value;
     }
 
+    public function getPopulationAttribute()
+    {
+        return $this->attributes['population_2016'];
+    }
+
+    public function setPopulationAttribute($value)
+    {
+        $this->population_2016 = $value;
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';
