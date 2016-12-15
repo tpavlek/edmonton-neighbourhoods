@@ -14,7 +14,6 @@
     <meta name="twitter:description" content="Get quick information about a neighbourhood using Edmonton's Open Data. Built by Troy Pavlek" />
     <meta property="og:description" content="Get quick information about a neighbourhood using Edmonton's Open Data. Built by Troy Pavlek" />
 
-    {% if page.img %}
     <meta name="twitter:image" content="{{URL::to('/') . $imgPath}}" />
     <meta property="og:image" content="{{URL::to('/') . $imgPath}}" />
 
