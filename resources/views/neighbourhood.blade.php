@@ -1,7 +1,26 @@
 @extends('layout')
 
 @section('title')
-    All about {{ $neighbourhood->name }}
+    All about {{ $neighbourhood->name }} in Edmonton
+@stop
+
+@section('social_meta')
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@troypavlek" />
+
+    <meta name="twitter:title" content="@yield('title')" />
+    <meta property="og:title" content="@yield('title')" />
+
+    <meta name="twitter:description" content="Get quick information about a neighbourhood using Edmonton's Open Data. Built by Troy Pavlek" />
+    <meta property="og:description" content="Get quick information about a neighbourhood using Edmonton's Open Data. Built by Troy Pavlek" />
+
+    {% if page.img %}
+    <meta name="twitter:image" content="{{URL::to('/') . $imgPath}}" />
+    <meta property="og:image" content="{{URL::to('/') . $imgPath}}" />
+
+
+    <meta property="og:url" content="{{ Request::url() }}" />
+    <meta property="og:type" content="website" />
 @stop
 
 @section('content')
