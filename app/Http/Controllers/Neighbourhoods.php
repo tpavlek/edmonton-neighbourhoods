@@ -38,9 +38,12 @@ class Neighbourhoods extends Controller
             'population' => $neighbourhoods->sum('population_2016'),
         ];
 
+        $imgPath = '/img/neighbourhood-banner/edmonton.jpg';
+
         return view('list')
             ->with('wards', $wards)
-            ->with('neighbourhood', $edmonton);
+            ->with('neighbourhood', $edmonton)
+            ->with('imgPath', $imgPath);
     }
 
     public function show(NeighbourhoodRecord $neighbourhood)
