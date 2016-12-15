@@ -45,8 +45,15 @@ class Neighbourhoods extends Controller
 
     public function show(NeighbourhoodRecord $neighbourhood)
     {
+        $imgPath = '/img/neighbourhood-banner/'.strtolower($neighbourhood->name).'.jpg';
+
+        if (!file_exists(public_path() . $imgPath)) {
+            $imgPath = '/img/neighbourhood-banner/default.jpg';
+        }
+
         return view('neighbourhood')
-            ->with('neighbourhood', $neighbourhood);
+            ->with('neighbourhood', $neighbourhood)
+            ->with('imgPath', $imgPath);
     }
 
     public function structure_types(NeighbourhoodRecord $neighbourhood)
@@ -183,6 +190,21 @@ class Neighbourhoods extends Controller
 
     public function test()
     {
+
+        $query = [
+            '$select' => 'lower(neighbourhood_name) as name'
+        ];
+
+        $results = $this->socrataClient->get('/resource/93i6-agam.json', $query);
+
+        $newNames = array_column($results, 'name');
+
+        $results = $this->socrataClient->get('/resource/ykfz-2ebi.json', [ '$select' => 'lower(name) as name' ]);
+
+        $oldNames = array_column($results, 'name');
+
+
+        dd(collect($oldNames)->diff($newNames));
         if (2016 == 2016) {
             $query = [
                 '$select' =>'neighbourhood_name, ( sum(_0_4) + sum(_5_9) + sum(_10_14) + sum(_15_19) + sum(_20_24) + sum(_30_34) + sum(_35_39) + sum(_40_44) + sum(_45_49) + sum(_50_54) + sum(_55_59) + sum(_60_64) + sum(_65_69) + sum(_70_74) + sum(_75_79) + sum(_80_84) + sum(_85) + sum(no_response) ) as population',

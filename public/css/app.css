@@ -4630,12 +4630,6 @@ body {
   padding: 0;
   margin: 0; }
 
-.bg-hazeldean {
-  background: url("/img/neighbourhood-banner/hazeldean.jpg"); }
-
-.bg-edmonton {
-  background: url("/img/neighbourhood-banner/edmonton.jpg"); }
-
 .banner {
   box-sizing: border-box;
   position: relative;
@@ -4719,6 +4713,7 @@ tr td:first-child {
   padding-top: 200px; }
 
 .body-wrapper.shrink .banner {
+  overflow: hidden;
   height: 90px;
   padding: 1rem;
   position: fixed;
@@ -4731,7 +4726,6 @@ tr td:first-child {
     font-size: 2em; }
 
 footer {
-  margin-top: 2rem;
   background: #111;
   color: whitesmoke;
   width: 100%;
@@ -4749,7 +4743,7 @@ footer {
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  background: lemonchiffon; }
+  background: linear-gradient(to bottom, #627d4d 0%, #627d4d 42%, #1f3b08 100%); }
 
 .mainpage .banner {
   width: 100%; }

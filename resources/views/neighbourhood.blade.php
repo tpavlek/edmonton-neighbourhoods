@@ -5,8 +5,8 @@
 @stop
 
 @section('content')
-    <div class="banner" style="background: url('/img/neighbourhood-banner/{{strtolower($neighbourhood->name)}}.jpg')">
-        <h1>{{ $neighbourhood->name }}</h1>
+    <div class="banner" style="background: url('{{$imgPath}}')">
+        <a href="{{ URL::route('list') }}"><h1>{{ $neighbourhood->name }}</h1></a>
         <div class="break"></div>
         <h1>Pop. {{ number_format($neighbourhood->population) }}</h1>
         <div class="break"></div>

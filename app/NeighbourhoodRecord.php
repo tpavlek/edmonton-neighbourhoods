@@ -42,7 +42,7 @@ class NeighbourhoodRecord extends Model
     {
         $instance = $this->newQuery()->firstOrCreate([ 'id' => $id ]);
 
-        $instance->name = $name;
+        $instance->name = ucwords(strtolower($name));
 
         $instance->save();
 

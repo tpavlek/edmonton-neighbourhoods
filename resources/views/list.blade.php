@@ -5,10 +5,14 @@
 @stop
 
 @section('content')
-    <div class="banner bg-edmonton">
-        <h1>{{ $neighbourhood->name }}</h1>
-        <div class="break"></div>
-        <h1>Pop. {{ number_format($neighbourhood->population) }}</h1>
+    <div class="banner main-banner" style="background: url('/img/neighbourhood-banner/edmonton.jpg')">
+        <div class="content">
+            <h1>{{ $neighbourhood->name }}</h1>
+            <div class="break"></div>
+            <h1>Pop. {{ number_format($neighbourhood->population) }}</h1>
+        </div>
+
+        <div class="fade">hi friend</div>
     </div>
     <div class="mainpage">
 
@@ -30,12 +34,6 @@
                 @endforeach
 
             </div>
-
-
-
-
-
-
         @endforeach
     </div>
 

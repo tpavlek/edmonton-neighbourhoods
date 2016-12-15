@@ -32,7 +32,7 @@ class SyncNeighbourhoods
 
     public function syncNeighbourhoods()
     {
-        $results = $this->socrataClient->get("/resource/ykfz-2ebi.json", [ '$limit' => 5000 ]);
+        $results = $this->socrataClient->get("/resource/y8bi-vahs.json", [ '$select' => 'neighbourhood_name as name, neighbourhood_number', '$limit' => 5000 ]);
 
         foreach ($results as $result) {
             $neighbourhood = $this->neighbourhoodRecord->updateOrCreate($result['neighbourhood_number'], $result['name']);
@@ -42,16 +42,15 @@ class SyncNeighbourhoods
                 //continue;
             }
 
-            foreach ([ 2016 ] as $year) {
+            foreach ([ 2009, 2012, 2016 ] as $year) {
                 $population = $this->populationService->forNeighbourhoodYear($neighbourhood, $year);
 
                 $neighbourhood->{"population_$year"} = $population;
             }
-            /*
             $population = $this->populationService->dataForNeighbourhood($neighbourhood);
 
             $neighbourhood->population_2014 = $population->total();
-            $neighbourhood->ward = $population->ward;*/
+            $neighbourhood->ward = $population->ward;
             $neighbourhood->save();
         }
     }
